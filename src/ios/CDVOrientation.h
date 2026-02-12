@@ -23,6 +23,9 @@
 #import <UIKit/UIKit.h>
 #import <Cordova/CDVViewController.h>
 
+// Global variable to store the current orientation mask for swizzled method
+extern UIInterfaceOrientationMask cdvOrientationCurrentMask;
+
 @interface CDVOrientation : CDVPlugin
 {
 @protected
@@ -30,6 +33,7 @@
     UIInterfaceOrientation _lastOrientation;
 }
 
++ (void)setupOrientationSwizzling;
 - (void)screenOrientation:(CDVInvokedUrlCommand *)command;
 
 @end
